@@ -1,14 +1,10 @@
 javascript:document.querySelectorAll('[id], [name]').forEach(elem => {
-  const parent = elem.parentNode;
+  const a = document.createElement('a');
+  const id = elem.getAttribute('id') || elem.getAttribute('name');
+  a.setAttribute('href', `#${id}`);
+  a.setAttribute('data-anchor', 'true');
+  a.innerText = `🔗 ${id}`;
 
-  if (parent != null) {
-    const a = document.createElement('a');
-    const id = elem.getAttribute('id') || elem.getAttribute('name');
-
-    a.setAttribute('href', `#${id}`);
-    a.setAttribute('data-anchor', 'true');
-    a.innerText = `🔗 ${id}`;
-    parent.insertNode(a, elem);
-  }
+  elem.parentNode?.insertBefore(a, elem);
 })
 
