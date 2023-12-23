@@ -18,8 +18,8 @@ bookmarklets. If not, see <https://www.gnu.org/licenses/>.
 
 **To install** each bookmarklet, create a bookmark as follows:
 
-Name: (any name you want)
-URL: (the contents of the bookmarklet file)
+- Name: (any name you want)
+- URL: (the contents of the bookmarklet file)
 
 ## BitBucket Comments Minimize
 
