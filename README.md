@@ -16,6 +16,40 @@ FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 You should have received a copy of the GNU General Public License along with
 dream-html. If not, see <https://www.gnu.org/licenses/>.
 
+## BitBucket Comments Minimize
+
+In BitBucket PRs, some workflows (or long-winded reviews) can pile up a lot of
+comments. Unfortunately, you have to scroll past all the comments to get to the
+diff. It's much easier to do that if all the comments are automatically
+collapsed and can be expanded with a click. This collapses (minimizes) the PR
+comments.
+
+## BitBucket PR message
+
+In BitBucket PRs, when you have the 'squash merge' feature enabled (which you
+really should), the default commit message is formatted really badly:
+
+    Merged in your-branch (pull request #nnn)
+
+    Real first line
+
+    Other lines
+
+So when you do `git log`, the one-line summary logs are full of inscrutable
+'Merged in...' messages which don't describe the actual commits themselves. This
+is a long-standing issue known to BitBucket:
+https://jira.atlassian.com/browse/BSERV-10184
+
+This bookmarklet fixes the message to look like this:
+
+    Real first line (PR #nnn)
+
+    Other lines
+
+Then it copies the fixed text to the clipboard and asks you to paste it into the
+commit message textbox. Unfortunately this extra step seems unavoidable because
+of the way the BitBucket textbox is designed. But it works fairly well.
+
 ## Paste enable
 
 Some very annoying websites disable the paste functionality on some of their
