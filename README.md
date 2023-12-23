@@ -24,7 +24,7 @@ diff. It's much easier to do that if all the comments are automatically
 collapsed and can be expanded with a click. This collapses (minimizes) the PR
 comments.
 
-## BitBucket PR message
+## BitBucket merge
 
 In BitBucket PRs, when you have the 'squash merge' feature enabled (which you
 really should), the default commit message is formatted really badly:
@@ -48,7 +48,9 @@ This bookmarklet fixes the message to look like this:
 
 Then it copies the fixed text to the clipboard and asks you to paste it into the
 commit message textbox. Unfortunately this extra step seems unavoidable because
-of the way the BitBucket textbox is designed. But it works fairly well.
+of the way the BitBucket textbox is designed. But it works fairly well. To use
+it, you click on the bookmarklet instead of clicking on the PR's 'Merge' button.
+Then you do a paste operation, and click the dialog box's 'Merge' button.
 
 ## Paste enable
 
