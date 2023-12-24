@@ -2,7 +2,7 @@
 
 Copyright 2023 Yawar Amin
 
-This file is part of dream-html.
+This file is part of bookmarklets.
 
 bookmarklets is free software: you can redistribute it and/or modify it under
 the terms of the GNU General Public License as published by the Free Software
