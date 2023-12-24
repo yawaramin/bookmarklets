@@ -40,9 +40,9 @@ really should), the default commit message is formatted really badly:
 
     Other lines
 
-So when you do `git log`, the one-line summary logs are full of inscrutable
-'Merged in...' messages which don't describe the actual commits themselves. This
-is a long-standing issue known to BitBucket:
+So when you do `git log --oneline`, the one-line summary logs are full of
+inscrutable 'Merged in...' messages which don't describe the actual commits
+themselves. This is a long-standing issue known to BitBucket:
 https://jira.atlassian.com/browse/BSERV-10184
 
 This bookmarklet fixes the message to look like this:
