@@ -5,7 +5,7 @@
   </head>
 
   <body>
-    <h1>Bookmarklets</h1>
+    <h1 id="h1-bookmarklets">Bookmarklets</h1>
 
     <p>Copyright 2023 Yawar Amin</p>
 
@@ -28,7 +28,7 @@
     <b>To install</b> each bookmarklet, simply drag and drop its link to your
     browser's Bookmarks bar.
 
-    <h2>BitBucket comments minimize</h2>
+    <h2 id="h2-bitbucket-comments-min">BitBucket comments minimize</h2>
 
     <p>In BitBucket PRs, some workflows (or long-winded reviews) can pile up a
     lot of comments. Unfortunately, you have to scroll past all the comments to
@@ -39,7 +39,7 @@
     <p><a href='javascript:document.querySelectorAll(".ak-renderer-document").forEach(e=>{let r=e.children[0].innerText.substring(0,80);e.innerHTML=`<details><summary>${r}...</summary>
 ${e.innerHTML}</details>`})'>bitbucket comments min</a></p>
 
-    <h2>BitBucket merge</h2>
+    <h2 id="h2-bitbucket-merge">BitBucket merge</h2>
 
     <p>In BitBucket PRs, when you have the 'squash merge' feature enabled (which you really should), the default commit message is formatted really badly:</p>
 
@@ -72,7 +72,7 @@ Other lines</pre>
 
 ${i[3]}`;await navigator.clipboard.writeText(d),s.select();let l=document.createTextNode("✋ remember to paste!");s.addEventListener("paste",e=>l.data="✅ ready to merge!"),s.parentNode?.insertBefore(l,s)}else console.warn("Default merge message in unexpected format")}else console.warn("Merge commit message text box not found")}else console.warn(`Merge button not found, probably need to update its selector: ${e}`)})()'>bitbucket merge</a></p>
 
-    <h2>Paste enable</h2>
+    <h2 id="h2-paste-enable">Paste enable</h2>
 
     <p>Some very annoying websites disable the paste functionality on some of
     their inputs by hijacking the paste event. This re-enables paste
@@ -82,7 +82,7 @@ ${i[3]}`;await navigator.clipboard.writeText(d),s.select();let l=document.create
     href='javascript:document.addEventListener("paste",e=>e.stopImmediatePropagation(),!0);'>paste
     enable</a></p>
 
-    <h2>Scroll bottom</h2>
+    <h2 id="h2-scroll-bottom">Scroll bottom</h2>
 
     <p>Scroll to the bottom of the page.</p>
 
@@ -90,13 +90,13 @@ ${i[3]}`;await navigator.clipboard.writeText(d),s.select();let l=document.create
     href="javascript:window.scrollTo(0,document.body.scrollHeight)">scroll
     bottom</a></p>
 
-    <h2>Scroll top</h2>
+    <h2 id="h2-scroll-top">Scroll top</h2>
 
     <p>Scroll to the top of the page.</p>
 
     <p><a href="javascript:window.scrollTo(0,0)">scroll top</a></p>
 
-    <h2>Sticky kill</h2>
+    <h2 id="h2-sticky-kill">Sticky kill</h2>
 
     <p>Kill sticky elements that hide parts of the page beneath them.</p>
 
@@ -104,14 +104,14 @@ ${i[3]}`;await navigator.clipboard.writeText(d),s.select();let l=document.create
     href="javascript:(function()%7Bdocument.querySelectorAll(%22body%20*%22).forEach(function(node)%7Bif(%5B%22fixed%22%2C%22sticky%22%5D.includes(getComputedStyle(node).position))%7Bnode.parentNode.removeChild(node)%7D%7D)%3Bdocument.querySelectorAll(%22html%20*%22).forEach(function(node)%7Bvar%20s%3DgetComputedStyle(node)%3Bif(%22hidden%22%3D%3D%3Ds%5B%22overflow%22%5D)%7Bnode.style%5B%22overflow%22%5D%3D%22visible%22%7Dif(%22hidden%22%3D%3D%3Ds%5B%22overflow-x%22%5D)%7Bnode.style%5B%22overflow-x%22%5D%3D%22visible%22%7Dif(%22hidden%22%3D%3D%3Ds%5B%22overflow-y%22%5D)%7Bnode.style%5B%22overflow-y%22%5D%3D%22visible%22%7D%7D)%3Bvar%20htmlNode%3Ddocument.querySelector(%22html%22)%3BhtmlNode.style%5B%22overflow%22%5D%3D%22visible%22%3BhtmlNode.style%5B%22overflow-x%22%5D%3D%22visible%22%3BhtmlNode.style%5B%22overflow-y%22%5D%3D%22visible%22%7D)()%3B%0A">sticky
     kill</a></p>
 
-    <h2>URL decrement</h2>
+    <h2 id="h2-url-decr">URL decrement</h2>
 
     <p>Decrement the last number in the URL and navigate to the resulting
     page.</p>
 
     <p><a href='javascript:(()=>{let l=/^([^\d.]*)(\d+)([/.][^/.]*)?$/.exec(window.location.pathname);if(null!=l){let a=l[3];window.location.pathname=l[1]+(parseInt(l[2])-1)+(null==a?"":a)}})();'>url decr</a></p>
 
-    <h2>URL increment</h2>
+    <h2 id="h2-url-incr">URL increment</h2>
 
     <p>Increment the last number in the URL and navigate to the resulting
     page.</p>
