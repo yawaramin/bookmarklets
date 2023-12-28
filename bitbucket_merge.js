@@ -12,7 +12,7 @@ javascript:(async () => {
       const results = /^Merged[^(]+\(pull request ([^)]+)\)\n\n([^\n]*)\n\n([^]*)/.exec(txt.value);
 
       if (results != null) {
-        const msg = `${results[2]} (${results[1]})\n\n${results[3]}`;
+        const msg = `${results[2]} (PR ${results[1]})\n\n${results[3]}`;
         await navigator.clipboard.writeText(msg);
         txt.select();
 
