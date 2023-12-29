@@ -2,125 +2,138 @@
 <html>
   <head>
     <title>Bookmarklets</title>
+    <style>
+      body {
+        margin: 1rem;
+      }
+
+      h1, h2 {
+        font-family: sans-serif;
+      }
+    </style>
   </head>
-
   <body>
-    <h1 id="h1-bookmarklets">Bookmarklets</h1>
+    <header>
+      <h1 id="h1-bookmarklets">Bookmarklets</h1>
 
-    <p>Copyright 2023 Yawar Amin</p>
+      <p>Copyright 2023 Yawar Amin</p>
 
-    <p>This file is part of bookmarklets.</p>
+      <p>This file is part of bookmarklets.</p>
 
-    <p>bookmarklets is free software: you can redistribute it and/or modify it
-    under the terms of the GNU General Public License as published by the Free
-    Software Foundation, either version 3 of the License, or (at your option)
-    any later version.</p>
+      <p>bookmarklets is free software: you can redistribute it and/or modify it
+      under the terms of the GNU General Public License as published by the Free
+      Software Foundation, either version 3 of the License, or (at your option)
+      any later version.</p>
 
-    <p>bookmarklets is distributed in the hope that it will be useful, but
-    WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
-    or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
-    more details.</p>
+      <p>bookmarklets is distributed in the hope that it will be useful, but
+      WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+      or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
+      for more details.</p>
 
-    <p>You should have received a copy of the GNU General Public License along
-    with bookmarklets. If not, see <a
-    href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>.</p>
+      <p>You should have received a copy of the GNU General Public License along
+      with bookmarklets. If not, see <a
+      href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>.</p>
 
-    <p>ℹ️  The bookmarklets' source code in this page are in a minified form. To
-    get the original code, go to the <a
-    href="https://github.com/yawaramin/bookmarklets">GitHub repo</a>.</p>
+      <p>ℹ️  The bookmarklets' source code in this page are in a minified form.
+      To get the original code, go to the <a
+      href="https://github.com/yawaramin/bookmarklets">GitHub repo</a>.</p>
 
-    <p><b>To install</b> each bookmarklet, simply drag and drop its link to your
-    browser's Bookmarks bar.</p>
+      <p><b>To install</b> each bookmarklet, simply drag and drop its link to
+      your browser's Bookmarks bar.</p>
+    </header>
+    <main>
+      <h2 id="h2-bitbucket-comments-min">BitBucket comments minimize</h2>
 
-    <h2 id="h2-bitbucket-comments-min">BitBucket comments minimize</h2>
+      <p>In BitBucket PRs, some workflows (or long-winded reviews) can pile up a
+      lot of comments. Unfortunately, you have to scroll past all the comments
+      to get to the diff. It's much easier to do that if all the comments are
+      automatically collapsed and can be expanded with a click. This collapses
+      (minimizes) the PR comments.</p>
 
-    <p>In BitBucket PRs, some workflows (or long-winded reviews) can pile up a
-    lot of comments. Unfortunately, you have to scroll past all the comments to
-    get to the diff. It's much easier to do that if all the comments are
-    automatically collapsed and can be expanded with a click. This collapses
-    (minimizes) the PR comments.</p>
+      <p><a href='javascript:document.querySelectorAll(".ak-renderer-document").forEach(e=>{let r=e.children[0].innerText.substring(0,80);e.innerHTML=`<details><summary>${r}...</summary>
+  ${e.innerHTML}</details>`})'>bitbucket comments min</a></p>
 
-    <p><a href='javascript:document.querySelectorAll(".ak-renderer-document").forEach(e=>{let r=e.children[0].innerText.substring(0,80);e.innerHTML=`<details><summary>${r}...</summary>
-${e.innerHTML}</details>`})'>bitbucket comments min</a></p>
+      <h2 id="h2-bitbucket-merge">BitBucket merge</h2>
 
-    <h2 id="h2-bitbucket-merge">BitBucket merge</h2>
+      <p>In BitBucket PRs, when you have the 'squash merge' feature enabled
+      (which you really should), the default commit message is formatted really
+      badly:</p>
 
-    <p>In BitBucket PRs, when you have the 'squash merge' feature enabled (which you really should), the default commit message is formatted really badly:</p>
-
-    <pre>Merged in your-branch (pull request #nnn)
+      <pre>Merged in your-branch (pull request #nnn)
 
 Real first line
 
 Other lines</pre>
 
-    <p>So when you do <code>git log --oneline</code>, the one-line summary logs
-    are full of inscrutable 'Merged in...' messages which don't describe the
-    actual commits themselves. This is a long-standing issue known to BitBucket:
-    <a
-    href="https://jira.atlassian.com/browse/BCLOUD-19402">https://jira.atlassian.com/browse/BCLOUD-19402</a>.</p>
+      <p>So when you do <code>git log --oneline</code>, the one-line summary
+      logs are full of inscrutable 'Merged in...' messages which don't describe
+      the actual commits themselves. This is a long-standing issue known to
+      BitBucket: <a
+      href="https://jira.atlassian.com/browse/BCLOUD-19402">https://jira.atlassian.com/browse/BCLOUD-19402</a>.</p>
 
-    <p>This bookmarklet fixes the message to look like this:</p>
+      <p>This bookmarklet fixes the message to look like this:</p>
 
-    <pre>Real first line (PR #nnn)
+      <pre>Real first line (PR #nnn)
 
 Other lines</pre>
 
-    <p>Then it copies the fixed text to the clipboard and asks you to paste it
-    into the commit message textbox. Unfortunately this extra step seems
-    unavoidable because of the way the BitBucket textbox is designed. But it
-    works fairly well. To use it, you click on the bookmarklet instead of
-    clicking on the PR's 'Merge' button. Then you do a paste operation, and
-    click the dialog box's 'Merge' button.</p>
+      <p>Then it copies the fixed text to the clipboard and asks you to paste it
+      into the commit message textbox. Unfortunately this extra step seems
+      unavoidable because of the way the BitBucket textbox is designed. But it
+      works fairly well. To use it, you click on the bookmarklet instead of
+      clicking on the PR's 'Merge' button. Then you do a paste operation, and
+      click the dialog box's 'Merge' button.</p>
 
-    <p><a href='javascript:(async()=>{let e="#pull-request-details > header > div > div > div.sc-gqjmRU.dlKxWb > div > div.css-1yuhvjn.e1q0qh516 > div > div > div > div.css-1oy5iav > div > button, #pull-request-details > div.css-1vm82r5.e9jxcmf0 > div > div.css-1991von.e1vsqsia0 > div > div > div.css-1oy5iav > button.css-1ywzcwn",t=document.querySelector(e);if(null!=t&&t instanceof HTMLButtonElement){window.scrollBy(0,1),t.click();let s=document.getElementById("merge-dialog-commit-message-textfield");if(null!=s&&s instanceof HTMLTextAreaElement){let i=/^Merged[^(]+\(pull request ([^)]+)\)\n\n([^\n]*)\n\n([^]*)/.exec(s.value);if(null!=i){let d=`${i[2]} (PR ${i[1]})
+      <p><a href='javascript:(async()=>{let e="#pull-request-details > header > div > div > div.sc-gqjmRU.dlKxWb > div > div.css-1yuhvjn.e1q0qh516 > div > div > div > div.css-1oy5iav > div > button, #pull-request-details > div.css-1vm82r5.e9jxcmf0 > div > div.css-1991von.e1vsqsia0 > div > div > div.css-1oy5iav > button.css-1ywzcwn",t=document.querySelector(e);if(null!=t&&t instanceof HTMLButtonElement){window.scrollBy(0,1),t.click();let s=document.getElementById("merge-dialog-commit-message-textfield");if(null!=s&&s instanceof HTMLTextAreaElement){let i=/^Merged[^(]+\(pull request ([^)]+)\)\n\n([^\n]*)\n\n([^]*)/.exec(s.value);if(null!=i){let d=`${i[2]} (PR ${i[1]})
 
-${i[3]}`;await navigator.clipboard.writeText(d),s.select();let l=document.createTextNode("✋ remember to paste!");s.addEventListener("paste",e=>l.data="✅ ready to merge!"),s.parentNode?.insertBefore(l,s)}else console.warn("Default merge message in unexpected format")}else console.warn("Merge commit message text box not found")}else console.warn(`Merge button not found, probably need to update its selector: ${e}`)})()'>bitbucket merge</a></p>
+  ${i[3]}`;await navigator.clipboard.writeText(d),s.select();let l=document.createTextNode("✋ remember to paste!");s.addEventListener("paste",e=>l.data="✅ ready to merge!"),s.parentNode?.insertBefore(l,s)}else console.warn("Default merge message in unexpected format")}else console.warn("Merge commit message text box not found")}else console.warn(`Merge button not found, probably need to update its selector: ${e}`)})()'>bitbucket merge</a></p>
 
-    <h2 id="h2-paste-enable">Paste enable</h2>
+      <h2 id="h2-paste-enable">Paste enable</h2>
 
-    <p>Some very annoying websites disable the paste functionality on some of
-    their inputs by hijacking the paste event. This re-enables paste
-    functionality.</p>
+      <p>Some very annoying websites disable the paste functionality on some of
+      their inputs by hijacking the paste event. This re-enables paste
+      functionality.</p>
 
-    <p><a
-    href='javascript:document.addEventListener("paste",e=>e.stopImmediatePropagation(),!0);'>paste
-    enable</a></p>
+      <p><a
+      href='javascript:document.addEventListener("paste",e=>e.stopImmediatePropagation(),!0);'>paste
+      enable</a></p>
 
-    <h2 id="h2-scroll-bottom">Scroll bottom</h2>
+      <h2 id="h2-scroll-bottom">Scroll bottom</h2>
 
-    <p>Scroll to the bottom of the page.</p>
+      <p>Scroll to the bottom of the page.</p>
 
-    <p><a
-    href="javascript:window.scrollTo(0,document.body.scrollHeight)">scroll
-    bottom</a></p>
+      <p><a
+      href="javascript:window.scrollTo(0,document.body.scrollHeight)">scroll
+      bottom</a></p>
 
-    <h2 id="h2-scroll-top">Scroll top</h2>
+      <h2 id="h2-scroll-top">Scroll top</h2>
 
-    <p>Scroll to the top of the page.</p>
+      <p>Scroll to the top of the page.</p>
 
-    <p><a href="javascript:window.scrollTo(0,0)">scroll top</a></p>
+      <p><a href="javascript:window.scrollTo(0,0)">scroll top</a></p>
 
-    <h2 id="h2-sticky-kill">Sticky kill</h2>
+      <h2 id="h2-sticky-kill">Sticky kill</h2>
 
-    <p>Kill sticky elements that hide parts of the page beneath them.</p>
+      <p>Kill sticky elements that hide parts of the page beneath them.</p>
 
-    <p><a
-    href="javascript:(function()%7Bdocument.querySelectorAll(%22body%20*%22).forEach(function(node)%7Bif(%5B%22fixed%22%2C%22sticky%22%5D.includes(getComputedStyle(node).position))%7Bnode.parentNode.removeChild(node)%7D%7D)%3Bdocument.querySelectorAll(%22html%20*%22).forEach(function(node)%7Bvar%20s%3DgetComputedStyle(node)%3Bif(%22hidden%22%3D%3D%3Ds%5B%22overflow%22%5D)%7Bnode.style%5B%22overflow%22%5D%3D%22visible%22%7Dif(%22hidden%22%3D%3D%3Ds%5B%22overflow-x%22%5D)%7Bnode.style%5B%22overflow-x%22%5D%3D%22visible%22%7Dif(%22hidden%22%3D%3D%3Ds%5B%22overflow-y%22%5D)%7Bnode.style%5B%22overflow-y%22%5D%3D%22visible%22%7D%7D)%3Bvar%20htmlNode%3Ddocument.querySelector(%22html%22)%3BhtmlNode.style%5B%22overflow%22%5D%3D%22visible%22%3BhtmlNode.style%5B%22overflow-x%22%5D%3D%22visible%22%3BhtmlNode.style%5B%22overflow-y%22%5D%3D%22visible%22%7D)()%3B%0A">sticky
-    kill</a></p>
+      <p><a
+      href="javascript:(function()%7Bdocument.querySelectorAll(%22body%20*%22).forEach(function(node)%7Bif(%5B%22fixed%22%2C%22sticky%22%5D.includes(getComputedStyle(node).position))%7Bnode.parentNode.removeChild(node)%7D%7D)%3Bdocument.querySelectorAll(%22html%20*%22).forEach(function(node)%7Bvar%20s%3DgetComputedStyle(node)%3Bif(%22hidden%22%3D%3D%3Ds%5B%22overflow%22%5D)%7Bnode.style%5B%22overflow%22%5D%3D%22visible%22%7Dif(%22hidden%22%3D%3D%3Ds%5B%22overflow-x%22%5D)%7Bnode.style%5B%22overflow-x%22%5D%3D%22visible%22%7Dif(%22hidden%22%3D%3D%3Ds%5B%22overflow-y%22%5D)%7Bnode.style%5B%22overflow-y%22%5D%3D%22visible%22%7D%7D)%3Bvar%20htmlNode%3Ddocument.querySelector(%22html%22)%3BhtmlNode.style%5B%22overflow%22%5D%3D%22visible%22%3BhtmlNode.style%5B%22overflow-x%22%5D%3D%22visible%22%3BhtmlNode.style%5B%22overflow-y%22%5D%3D%22visible%22%7D)()%3B%0A">sticky
+      kill</a></p>
 
-    <h2 id="h2-url-decr">URL decrement</h2>
+      <h2 id="h2-url-decr">URL decrement</h2>
 
-    <p>Decrement the last number in the URL and navigate to the resulting
-    page.</p>
+      <p>Decrement the last number in the URL and navigate to the resulting
+      page.</p>
 
-    <p><a href='javascript:(()=>{let l=/^([^\d.]*)(\d+)([/.][^/.]*)?$/.exec(window.location.pathname);if(null!=l){let a=l[3];window.location.pathname=l[1]+(parseInt(l[2])-1)+(null==a?"":a)}})();'>url decr</a></p>
+      <p><a href='javascript:(()=>{let l=/^([^\d.]*)(\d+)([/.][^/.]*)?$/.exec(window.location.pathname);if(null!=l){let a=l[3];window.location.pathname=l[1]+(parseInt(l[2])-1)+(null==a?"":a)}})();'>url decr</a></p>
 
-    <h2 id="h2-url-incr">URL increment</h2>
+      <h2 id="h2-url-incr">URL increment</h2>
 
-    <p>Increment the last number in the URL and navigate to the resulting
-    page.</p>
+      <p>Increment the last number in the URL and navigate to the resulting
+      page.</p>
 
-    <p><a href='javascript:(()=>{let l=/^([^\d.]*)(\d+)([/.][^/.]*)?$/.exec(window.location.pathname);if(null!=l){let a=l[3];window.location.pathname=l[1]+(parseInt(l[2])+1)+(null==a?"":a)}})();'>url incr</a></p>
+      <p><a href='javascript:(()=>{let l=/^([^\d.]*)(\d+)([/.][^/.]*)?$/.exec(window.location.pathname);if(null!=l){let a=l[3];window.location.pathname=l[1]+(parseInt(l[2])+1)+(null==a?"":a)}})();'>url incr</a></p>
+    </main>
   </body>
 </html>
 
