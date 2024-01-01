@@ -34,14 +34,22 @@
       with bookmarklets. If not, see <a
       href="https://www.gnu.org/licenses/">https://www.gnu.org/licenses/</a>.</p>
 
-      <p>ℹ️  The bookmarklets' source code in this page are in a minified form.
-      To get the original code, go to the <a
+      <p>ℹ️  The bookmarklets' source code in this page are in a <a
+      href="https://www.toptal.com/developers/javascript-minifier">minified</a>
+      form. To get the original code, go to the <a
       href="https://github.com/yawaramin/bookmarklets">GitHub repo</a>.</p>
 
       <p><b>To install</b> each bookmarklet, simply drag and drop its link to
       your browser's Bookmarks bar.</p>
     </header>
     <main>
+      <h2 id="h2-anchors-toggle">Anchors toggle</h2>
+
+      <p>Show or hide all anchors (elements with <code>id</code> or
+      <code>name</code> attributes) on the page.</p>
+
+      <p><a href='javascript:(()=>{let e="data-anchor",t=document.querySelectorAll(`[${e}]`);0==t.length?document.querySelectorAll("[id], [name]").forEach(t=>{let r=document.createElement("a"),a=t.getAttribute("id")||t.getAttribute("name");r.setAttribute("href",`#${a}`),r.setAttribute(e,"true"),r.innerText=`🔗 ${a}`,t.parentNode?.insertBefore(r,t)}):t.forEach(e=>e.parentNode.removeChild(e))})()'>anchors toggle</a></p>
+
       <h2 id="h2-bitbucket-comments-min">BitBucket comments minimize</h2>
 
       <p>In BitBucket PRs, some workflows (or long-winded reviews) can pile up a
@@ -111,23 +119,20 @@ Other lines</pre>
       href='javascript:document.addEventListener("paste",e=>e.stopImmediatePropagation(),!0);'>paste
       enable</a></p>
 
-      <h2 id="h2-scroll-bottom">Scroll bottom</h2>
+      <h2 id="h2-scroll-toggle">Scroll toggle</h2>
 
-      <p>Scroll to the bottom of the page.</p>
+      <p>Scroll to the top or bottom of the page.</p>
 
       <p><a
-      href="javascript:window.scrollTo(0,document.body.scrollHeight)">scroll
-      bottom</a></p>
-
-      <h2 id="h2-scroll-top">Scroll top</h2>
-
-      <p>Scroll to the top of the page.</p>
-
-      <p><a href="javascript:window.scrollTo(0,0)">scroll top</a></p>
+      href="javascript:0==window.scrollY?window.scrollTo(0,document.body.scrollHeight):window.scrollTo(0,0)">scroll
+      toggle</a></p>
 
       <h2 id="h2-sticky-kill">Sticky kill</h2>
 
       <p>Kill sticky elements that hide parts of the page beneath them.</p>
+
+      <p>ℹ️  This is from <a
+      href="https://github.com/t-mart/kill-sticky">https://github.com/t-mart/kill-sticky</a>.</p>
 
       <p><a
       href="javascript:(function()%7Bdocument.querySelectorAll(%22body%20*%22).forEach(function(node)%7Bif(%5B%22fixed%22%2C%22sticky%22%5D.includes(getComputedStyle(node).position))%7Bnode.parentNode.removeChild(node)%7D%7D)%3Bdocument.querySelectorAll(%22html%20*%22).forEach(function(node)%7Bvar%20s%3DgetComputedStyle(node)%3Bif(%22hidden%22%3D%3D%3Ds%5B%22overflow%22%5D)%7Bnode.style%5B%22overflow%22%5D%3D%22visible%22%7Dif(%22hidden%22%3D%3D%3Ds%5B%22overflow-x%22%5D)%7Bnode.style%5B%22overflow-x%22%5D%3D%22visible%22%7Dif(%22hidden%22%3D%3D%3Ds%5B%22overflow-y%22%5D)%7Bnode.style%5B%22overflow-y%22%5D%3D%22visible%22%7D%7D)%3Bvar%20htmlNode%3Ddocument.querySelector(%22html%22)%3BhtmlNode.style%5B%22overflow%22%5D%3D%22visible%22%3BhtmlNode.style%5B%22overflow-x%22%5D%3D%22visible%22%3BhtmlNode.style%5B%22overflow-y%22%5D%3D%22visible%22%7D)()%3B%0A">sticky
