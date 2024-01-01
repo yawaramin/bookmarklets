@@ -88,6 +88,13 @@ Other lines</pre>
 
   ${i[3]}`;await navigator.clipboard.writeText(d),s.select();let l=document.createTextNode("✋ remember to paste!");s.addEventListener("paste",e=>l.data="✅ ready to merge!"),s.parentNode?.insertBefore(l,s)}else console.warn("Default merge message in unexpected format")}else console.warn("Merge commit message text box not found")}else console.warn(`Merge button not found, probably need to update its selector: ${e}`)})()'>bitbucket merge</a></p>
 
+      <h2 id="h2-ext-links">External links</h2>
+
+      <p>Show external links on the page visually. Prefixes the text of the link
+      with a globe 🌐 emoji.</p>
+
+      <p><a href='javascript:(()=>{let t=window.location.host;document.querySelectorAll("a").forEach(e=>{if(e instanceof HTMLAnchorElement){let n=e.getAttribute("href");null!=n&&n.startsWith("http")&&t!=new URL(n).host&&(e.innerText="\uD83C\uDF10 "+e.innerText)}})})()'>ext links</a></p>
+
       <h2 id="h2-home-page">Home page</h2>
 
       <p>Go to this site's home page.</p>
