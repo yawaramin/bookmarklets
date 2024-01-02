@@ -109,10 +109,11 @@ Other lines</pre>
 
       <h2 id="h2-ext-links">External links</h2>
 
-      <p>Show external links on the page visually. Prefixes the text of the link
-      with a globe 🌐 emoji.</p>
+      <p>Show external links on the page visually. Suffixes the text of the
+      hyperlink with its hostname in parentheses, e.g. <code>link
+      (example.com)</code>.</p>
 
-      <p><a href='javascript:(()=>{let t=window.location.host;document.querySelectorAll("a").forEach(e=>{if(e instanceof HTMLAnchorElement){let n=e.getAttribute("href");null!=n&&n.startsWith("http")&&t!=new URL(n).host&&(e.innerText="\uD83C\uDF10 "+e.innerText)}})})()'>ext links</a></p>
+      <p><a href='javascript:(()=>{let t=window.location.host;document.querySelectorAll("a").forEach(e=>{if(e instanceof HTMLAnchorElement){let l=e.getAttribute("href");if(null!=l&&l.startsWith("http")){let n=new URL(l).host;t!=n&&(e.innerText=`${e.innerText} (${n})`)}}})})()'>ext links</a></p>
 
       <h2 id="h2-home-page">Home page</h2>
 
