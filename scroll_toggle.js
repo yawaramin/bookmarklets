@@ -1,6 +1,2 @@
-javascript:if (window.scrollY == 0) {
-  window.scrollTo(0, document.body.scrollHeight)
-} else {
-  window.scrollTo(0, 0)
-}
+javascript:window.scrollTo(0, window.scrollY == 0 ? document.body.scrollHeight : 0)
 

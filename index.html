@@ -135,7 +135,7 @@ Other lines</pre>
       <p>Scroll to the top or bottom of the page.</p>
 
       <p><a
-      href="javascript:0==window.scrollY?window.scrollTo(0,document.body.scrollHeight):window.scrollTo(0,0)">scroll
+      href="javascript:window.scrollTo(0,window.scrollY==0?document.body.scrollHeight:0)">scroll
       toggle</a></p>
 
       <h2 id="h2-sticky-kill">Sticky kill</h2>
