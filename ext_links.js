@@ -1,8 +1,10 @@
 javascript:(() => {
   const host = window.location.host;
   const extCls = 'github-yawaramin-ext-link';
-  const extSty = document.createElement('style');
+  const extStyId = `${extCls}-id`;
+  const extSty = document.getElementById(extStyId) || document.createElement('style');
 
+  extSty.id = extStyId;
   extSty.innerText = `.${extCls} {
   background-color:#e9e9e9;
   border-radius:10px;
