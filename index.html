@@ -134,6 +134,16 @@ Other lines</pre>
 
       <p><a href="javascript:window.location.href=window.location.origin">home page</a></p>
 
+      <h2 id="h2-odoc-idx">Odoc index</h2>
+
+      <p>If you are viewing an odoc-generated OCaml documentation module page
+      like <a
+      href="https://yawaramin.github.io/dream-html/dream-html/Dream_html/index.html">this</a>,
+      this bookmarklet will generate an alphabetically-sorted index of the
+      contents of the module, and inject it into the left sidebar.</p>
+
+      <p><a href='javascript:(()=>{let e=document.querySelector("nav.odoc-toc");if(null==e){console.warn("Could not find odoc TOC");return}let t=(t,l,r)=>{if(0==l.length)return;l.sort();let n=document.createElement("h3"),s=document.createElement("ul");n.innerText=t,e.appendChild(n),e.appendChild(s),l.forEach(e=>{let t=document.createElement("li"),l=document.createElement("a");l.setAttribute("href","#"+e),l.innerText=e.substring(r),t.appendChild(l),s.appendChild(t)})},l=[],r=[],n=[],s=[];document.querySelectorAll("div[id]").forEach(e=>{let t=e.id;t.startsWith("val-")?l.push(t):t.startsWith("type-")?r.push(t):t.startsWith("module-")?n.push(t):t.startsWith("module-type-")&&s.push(t)}),t("Module Types",s,12),t("Modules",n,7),t("Types",r,5),t("Values",l,4)})()'>odoc idx</a></p>
+
       <h2 id="h2-paste-enable">Paste enable</h2>
 
       <p>Some very annoying websites disable the paste functionality on some of
