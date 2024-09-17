@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang=en>
   <head>
     <title>Bookmarklets</title>
     <style>
@@ -76,8 +76,7 @@
       automatically collapsed and can be expanded with a click. This collapses
       (minimizes) the PR comments.</p>
 
-      <p><a href='javascript:document.querySelectorAll(".ak-renderer-document").forEach(e=>{let r=e.children[0].innerText.substring(0,80);e.innerHTML=`<details><summary>${r}...</summary>
-  ${e.innerHTML}</details>`})'>bitbucket comments min</a></p>
+      <p><a href='document.querySelectorAll("button > span[aria-label=collapse]").forEach(l=>l.click())'>bitbucket comments min</a></p>
 
       <h2 id="h2-bitbucket-merge">BitBucket merge</h2>
 
