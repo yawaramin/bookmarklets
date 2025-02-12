@@ -111,6 +111,34 @@ Other lines</pre>
 
       <p><a href='javascript:(async()=>{let e="#pull-request-details > header > div > div > div.sc-gqjmRU.dlKxWb > div > div.css-1yuhvjn.e1q0qh516 > div > div > div > div.css-1oy5iav > div > button, #pull-request-details > div.css-1vm82r5.e9jxcmf0 > div > div.css-1991von.e1vsqsia0 > div > div > div.css-1oy5iav > button.css-1ywzcwn",t=document.querySelector(e);if(null!=t&&t instanceof HTMLButtonElement){window.scrollBy(0,1),t.click();let s=document.getElementById("merge-dialog-commit-message-textfield");if(null!=s&&s instanceof HTMLTextAreaElement){let i=/^Merged[^(]+\(pull request ([^)]+)\)\n\n([^\n]*)\n\n([^]*)/.exec(s.value);if(null!=i){let d=`${i[2]} (PR ${i[1]})\n\n${i[3]}`;await navigator.clipboard.writeText(d),s.select();let l=document.createTextNode("✋ remember to paste!");s.addEventListener("paste",e=>l.data="✅ ready to merge!"),s.parentNode?.insertBefore(l,s)}else console.warn("Default merge message in unexpected format")}else console.warn("Merge commit message text box not found")}else console.warn(`Merge button not found, probably need to update its selector: ${e}`)})()'>bitbucket merge</a></p>
 
+      <h2 id="h2-email-plus">Email+</h2>
+
+      <p>Fills in your email address with a 'plus-address' extension using the
+      website's domain name, so that you can sign up with a unique email address
+      for each service you use. This is handy because if one email is leaked
+      from a service, it protects your other emails from phishing attempts.
+      <b>Remember to position the cursor inside an empty field before you click
+      on this bookmarklet!</b></p>
+
+      <p>This one is a bit special–you'll need to modify the bookmarklet URL
+      with your specific email address parts.</p>
+
+      <p>Eg, if your email address is <code>bob@foo.com</code>, then you would
+      change <code>USERNAME</code> to <code>bob</code> and <code>HOST</code> to
+      <code>foo.com</code>.</p>
+
+      <p><b>Also remember to save this email address somewhere.</b> Since it's a
+      plus-address, you'll need to keep track of it because your base address
+      won't work with the service. Store it in your password manager (either
+      your browser's built-in one or a third-party one) or note it down
+      somewhere.</p>
+
+      <p><b>Note:</b> this only works with input fields which are not
+      'controlled' by JavaScript ie those whose <code>value</code> property is
+      not reset on every render.</p>
+
+      <p><a href="javascript:document.activeElement.value = 'USERNAME+' + location.host + '@HOST'; console.log();">email+</a></p>
+
       <h2 id="h2-ext-links">External links</h2>
 
       <p>Show external links on the page visually. Suffixes the text of the
@@ -150,6 +178,24 @@ Other lines</pre>
       <p><a
       href='javascript:document.addEventListener("paste",e=>e.stopImmediatePropagation(),!0);'>paste
       enable</a></p>
+
+      <h2 id="h2-password-new">Password new</h2>
+
+      <p>Fill the currently selected input with a cryptographically random
+      password (technically, a UUID string, but it works well as a
+      password).</p>
+
+      <p>The idea is that you generate a long random password and just let your
+      browser's password manager save and remember it. Obviously, if you use
+      some other specific password manager which generates passwords for you,
+      you might prefer that one. But this is a simpler alternative
+      otherwise.</p>
+
+      <p><b>Note:</b> this only works with input fields which are not
+      'controlled' by JavaScript ie those whose <code>value</code> property is
+      not reset on every render.</p>
+
+      <p><a href="javascript:document.activeElement.value = crypto.randomUUID(); console.log();">password 🆕</a></p>
 
       <h2 id="h2-scroll-toggle">Scroll toggle</h2>
 
